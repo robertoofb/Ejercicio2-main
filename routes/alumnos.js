@@ -7,7 +7,7 @@ dotenv.config();
 
 const {connection} = require("../config/config.db");
 const getAlumno = (request,response) => {
-    connection.query("SELECT tbl_alumno.Nombre,tbl_alumno.Email, tbl_carrera.Carrera FROM tbl_alumno INNER JOIN tbl_carrera WHERE tbl_alumno.FK_Carrera = tbl_carrera.ID_Carrera",
+    connection.query("SELECT tbl_alumno.Nombre,tbl_alumno.Email, tbl_carrera.Carrera, tbl_alumno.Edad FROM tbl_alumno INNER JOIN tbl_carrera WHERE tbl_alumno.FK_Carrera = tbl_carrera.ID_Carrera",
     (error,results)=>{
         if(error)
         throw error;
